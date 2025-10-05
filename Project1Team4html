@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Khaana -- Your Page Title</title>
+
+  <!-- Basic styling (keeps everything in one file) -->
+  <style>
+    /* Page-wide */
+    :root{
+      --brand-blue: blue;
+      --brand-goldenrod: goldenrod;
+      --brand-darkgoldenrod: darkgoldenrod;
+      --bg: azure;
+      --body-size: 16px;      /* body font size requirement */
+      --header-size: 22px;    /* header font size requirement */
+      --footer-size: 12px;    /* footer font size requirement */
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      background-color: var(--bg);
+      font-family: "Segoe UI", Tahoma, Geneva, sans-serif; /* primary font style */
+      font-size: var(--body-size);
+      color: #222;
+      line-height:1.45;
+    }
+
+    header{
+      padding:18px 24px;
+      border-bottom: 2px solid rgba(0,0,0,0.05);
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+
+    /* Header title requirement (22px) */
+    header h1{
+      margin:0;
+      font-size: var(--header-size);
+      font-weight:700;
+      letter-spacing:0.2px;
+      color: var(--brand-darkgoldenrod);
+    }
+
+    nav a{
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:6px;
+      font-size:14px;
+      color:var(--brand-blue);
+    }
+
+    main{
+      padding: 24px;
+      max-width:900px;
+      margin: 12px auto;
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      border-radius:10px;
+    }
+
+    /* Use Georgia for descriptive blocks to satisfy second font style */
+    .serif {
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .hero{
+      display:flex;
+      gap:18px;
+      align-items:flex-start;
+    }
+
+    .hero img{
+      width:320px;
+      height:auto;
+      border-radius:8px;
+      object-fit:cover;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .callout{
+      padding:6px 10px;
+      border-left:4px solid var(--brand-goldenrod);
+      margin-bottom:10px;
+    }
+
+    /* two font sizes (excluding headers) */
+    .large-text { font-size:18px; }  /* larger than body */
+    .small-text { font-size:14px; }  /* smaller than body */
+
+    section { margin-top:18px; }
+
+    .products {
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:12px;
+    }
+
+    .product-card{
+      padding:12px;
+      border-radius:8px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(250,250,250,0.9));
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    footer{
+      font-size: var(--footer-size);
+      text-align:center;
+      padding:14px 10px;
+      color: #333;
+      margin-top:18px;
+    }
+
+    .muted { color:#555; font-size:13px; }
+
+    /* accessible button-like link */
+    .btn {
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:8px;
+      background: var(--brand-blue);
+      color:white;
+      text-decoration:none;
+      font-weight:600;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:12px">
+      <!-- simple SVG logo (keeps it professional) -->
+      <svg width="54" height="54" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <rect width="64" height="64" rx="10" fill="goldenrod"></rect>
+        <path d="M18 40 C26 30, 38 30, 46 40 L46 42 C38 34, 26 34, 18 42 Z" fill="white" opacity="0.95"/>
+        <circle cx="32" cy="22" r="8" fill="white" opacity="0.95"/>
+      </svg>
+    </div>
+
+    <div style="flex:1">
+      <h1>Khaana — Ready-to-Eat Online Meal Delivery</h1>
+      <div class="muted small-text">Protein+ • Vegetarian • Carb-Friendly — Meals built for your lifestyle</div>
+    </div>
+
+    <nav aria-label="Main navigation">
+      <!-- internal link (doesn't open new tab) -->
+      <a href="#top" title="Home">Home</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Hero area: image + summary -->
+    <div class="hero">
+      <img src="https://images.unsplash.com/photo-1543353071-087092ec393?auto=format&fit=crop&w=800&q=80" alt="Assorted ready-to-eat meals on table" />
+
+      <div>
+        <div class="callout">
+          <!-- demonstrates bold, underline, italic -->
+          <p class="large-text"><strong>Welcome to <span style="color:var(--brand-blue)">Khaana</span></strong> — <u><em>freshly prepared, nutritionally balanced</em></u> meals delivered to your door.</p>
+        </div>
+
+        <p class="serif small-text" style="color:var(--brand-darkgoldenrod)">
+          <strong>What we do:</strong> We craft <em>ready-to-eat</em> meals designed for busy lives. Our menu includes <span style="color:var(--brand-goldenrod)">Protein+</span>, <span style="color:var(--brand-blue)">Vegetarian</span>, and <span style="color:var(--brand-darkgoldenrod)">Carb-Friendly</span> options.
+        </p>
+
+        <p class="small-text">Our team focuses on taste, convenience, and dietary transparency — delivered weekly or on demand.</p>
+
+        <!-- contact mailto link (functioning email link requirement) -->
+        <p style="margin-top:10px">
+          <a class="btn" href="mailto:contact@khaana.example" title="Email Khaana">Contact Me</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Services section (this page is the company services page) -->
+    <section aria-labelledby="services">
+      <h2 id="services" style="font-size:20px; margin-top:18px; color:var(--brand-blue)">Our Services</h2>
+
+      <p class="serif large-text" style="margin-bottom:8px;">
+        At <strong>Khaana</strong>, our services go beyond simple meal delivery — we partner with you to make healthy eating effortless.
+      </p>
+
+      <!-- Ordered list (how our service works) -->
+      <h3 style="font-size:18px; margin-bottom:6px;">How it works (ordered)</h3>
+      <ol>
+        <li><strong>Choose a plan</strong> — weekly or one-time. (Protein+, Vegetarian, or Carb-Friendly)</li>
+        <li><em>Customize</em> your meals: swap proteins, add snacks, choose portion sizes.</li>
+        <li><u>Schedule delivery</u> for a day/time that fits your routine.</li>
+        <li>Receive sealed, labeled meals with reheating instructions and nutrition facts.</li>
+      </ol>
+
+      <!-- Unordered list (features and add-ons) -->
+      <h3 style="font-size:18px; margin-bottom:6px;">Features & Add-ons (unordered)</h3>
+      <ul>
+        <li>Fresh, chef-created recipes updated monthly</li>
+        <li>Allergen labeling and nutritional breakdowns</li>
+        <li>Flexible pause/cancel policy</li>
+        <li>Corporate catering and bulk order discounts</li>
+      </ul>
+
+      <!-- Product cards listing the three products -->
+      <div class="products" style="margin-top:12px">
+        <div class="product-card serif">
+          <h4 style="margin:0 0 6px 0; color:var(--brand-darkgoldenrod)">Protein+ Meals</h4>
+          <p class="small-text">High-protein plates (chicken, beef, plant-protein) designed for recovery and sustained energy. <strong>Perfect for athletes</strong> or busy professionals.</p>
+          <p class="small-text"><span style="color:var(--brand-blue)"><em>Sample:</em></span> Grilled chicken, roasted vegetables, quinoa.</p>
+        </div>
+
+        <div class="product-card serif">
+          <h4 style="margin:0 0 6px 0; color:var(--brand-goldenrod)">Vegetarian Meals</h4>
+          <p class="small-text">Carefully balanced vegetarian entrées that prioritize flavor and micronutrients. Includes vegan options on request.</p>
+          <p class="small-text"><span style="color:var(--brand-darkgoldenrod)"><em>Sample:</em></span> Chickpea curry, brown rice, roasted cauliflower.</p>
+        </div>
+
+        <div class="product-card serif">
+          <h4 style="margin:0 0 6px 0; color:var(--brand-blue)">Carb-Friendly</h4>
+          <p class="small-text">Lower-carb meals that keep you full without excess starchy sides. <strong>Great for carb-conscious customers.</strong></p>
+          <p class="small-text"><span style="color:var(--brand-goldenrod)"><em>Sample:</em></span> Salmon, greens, cauliflower mash.</p>
+        </div>
+      </div>
+
+      <!-- External relevant link (must open in a new blank window) -->
+      <p style="margin-top:14px;" class="muted">
+        For general nutrition guidance, we reference trusted resources such as the Academy of Nutrition and Dietetics —
+        <a href="https://www.eatright.org" target="_blank" rel="noopener noreferrer">eatright.org</a>.
+        (Opens in a new window.)
+      </p>
+
+      <!-- Downloadable company file (menu / brochure) -->
+      <section style="margin-top:14px;">
+        <h3 style="font-size:18px">Download our sample menu</h3>
+        <p class="small-text">Click to download a quick sample menu and nutrition facts sheet for Khaana.</p>
+
+        <!-- data URI for a small plain-text menu (forces download, relevant to company) -->
+        <a href="data:text/plain;charset=utf-8,Khaana%20Sample%20Menu%0A%0AProtein%2B%20Meals%3A%0A- %20Grilled%20Chicken%20Bowl%20(Protein%3A%2035g)%0A- %20Beef%20Teriyaki%20(Protein%3A%2038g)%0A%0AVegetarian%20Meals%3A%0A- %20Chickpea%20Curry%20(Protein%3A%2016g)%0A- %20Tofu%20Stir-fry%0A%0ACarb-Friendly%3A%0A- %20Salmon%20&%20Greens%0A- %20Cauliflower%20Mash%20Bowl%0A%0AContact%3A%20contact%40khaana.example%0A" download="Khaana_Sample_Menu.txt" class="btn" aria-label="Download Khaana sample menu">Download Sample Menu</a>
+      </section>
+
+    </section>
+
+    <!-- Small FAQ or professional details -->
+    <section aria-labelledby="faq" style="margin-top:18px;">
+      <h3 id="faq" style="font-size:18px">Professional & Safety Notes</h3>
+      <p class="small-text serif">All meals are prepared in a certified kitchen following local food safety regulations. Ingredients are sourced from vetted suppliers and labeled for common allergens.</p>
+      <p class="small-text">We offer corporate onboarding and nutrition workshops for clients interested in staff meal programs.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div id="lastModified" aria-live="polite">Last Modified: <span id="lm-value">calculating...</span></div>
+    <div class="muted" style="margin-top:6px;">Khaana &middot; Sample company site — not a real business. Email: <a href="mailto:contact@khaana.example">contact@khaana.example</a></div>
+  </footer>
+
+  <!-- Script to automatically update and display last modified date (meets automatic update requirement).
+       Uses document.lastModified if available; falls back to current date/time.
+  -->
+  <script>
+    (function(){
+      function formatDate(d){
+        // e.g. October 5, 2025 at 11:23 AM
+        var opts = { year: 'numeric', month: 'long', day: 'numeric' };
+        var datePart = d.toLocaleDateString(undefined, opts);
+        var timePart = d.toLocaleTimeString([], {hour: 'numeric', minute:'2-digit'});
+        return datePart + ' at ' + timePart;
+      }
+
+      var lmElem = document.getElementById('lm-value');
+      var lastModified = document.lastModified;
+
+      if(lastModified && lastModified.trim() !== "") {
+        // document.lastModified often contains "MM/DD/YYYY HH:MM:SS" or locale variant
+        var parsed = new Date(lastModified);
+        if(!isNaN(parsed)) {
+          lmElem.textContent = formatDate(parsed);
+        } else {
+          // if parsing fails, show the raw string
+          lmElem.textContent = lastModified;
+        }
+      } else {
+        // fallback: use current date/time so it's always accurate without manual edits
+        lmElem.textContent = formatDate(new Date());
+      }
+
+      // Accessibility: ensure mailto links are announced
+      var mailLinks = document.querySelectorAll('a[href^="mailto:"]');
+      mailLinks.forEach(function(a){ a.setAttribute('aria-label', 'Email Khaana'); });
+
+    })();
+  </script>
+</body>
+</html>
